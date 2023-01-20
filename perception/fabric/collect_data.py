@@ -24,7 +24,7 @@ def main():
     data = {"color": [], "depth": []}
     count = 0
 
-    dir_data = "data/imgs/0117_shirt"
+    dir_data = "data/imgs/0120_shirt5"
     os.makedirs(dir_data, exist_ok=True)
 
     sz = 600
@@ -54,13 +54,14 @@ def main():
         data["color"].append(color_small)
         data["depth"].append(depth_transformed_small)
 
-        if count > 50:
+        if count > 20:
             break
         # if count % 100 == 0:
         print(count)
         count += 1
 
-        key = cv2.waitKey(2500)
+        key = cv2.waitKey(100)
+        c = input()
         if key != -1:
             cv2.destroyAllWindows()
             break
